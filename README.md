@@ -1,63 +1,46 @@
-# OpenRefine
-
-[![DOI](https://zenodo.org/badge/6220644.svg)](https://zenodo.org/badge/latestdoi/6220644)
-[![Join the chat at https://gitter.im/OpenRefine/OpenRefine](https://badges.gitter.im/OpenRefine/OpenRefine.svg)](https://gitter.im/OpenRefine/OpenRefine) 
-[![Snapshot release](https://github.com/OpenRefine/OpenRefine/actions/workflows/snapshot_release.yml/badge.svg)](https://github.com/OpenRefine/OpenRefine/actions/workflows/snapshot_release.yml) [![Coverage Status](https://coveralls.io/repos/github/OpenRefine/OpenRefine/badge.svg?branch=master)](https://coveralls.io/github/OpenRefine/OpenRefine?branch=master) [![Translation progress](https://hosted.weblate.org/widgets/openrefine/-/svg-badge.svg)](https://hosted.weblate.org/engage/openrefine/?utm_source=widget)
-
-OpenRefine is a Java-based power tool that allows you to load data, understand it,
-clean it up, reconcile it, and augment it with data coming from
-the web. All from a web browser and the comfort and privacy of your own computer.
-
-Official website: **https://openrefine.org**
-
-Community forum: **https://forum.openrefine.org**
-
-[<img src="https://github.com/OpenRefine/OpenRefine/blob/master/graphics/icon/open-refine-320px.png" align="right">](https://openrefine.org)
-
-## Download
-
-* [OpenRefine Releases](https://github.com/OpenRefine/OpenRefine/releases)
-
-## Snapshot releases
-
-You can download snapshots of the development version of OpenRefine.
-To do so, you need to be logged in to GitHub. Then, click on the first item with a green tick / check mark on [this page](https://github.com/OpenRefine/OpenRefine/actions/workflows/snapshot_release.yml) and scroll down to the Artifacts section to find the version that matches your operating system.
-
-## Run from source
-
-If you have cloned this repository to your computer, you can run OpenRefine with:
-
-* `./refine` on Mac OS and Linux
-* `refine.bat` on Windows
-
-This requires [JDK 11](https://adoptium.net/) or newer, [Apache Maven](https://maven.apache.org/) and [NPM](https://www.npmjs.com/) 16 or newer.
-
-## Documentation
-
-* [User Manual](https://openrefine.org/docs)
-* [FAQ](https://github.com/OpenRefine/OpenRefine/wiki/FAQ)
-
-## Contributing to the project
-
-* [Developers Guide & Architecture](https://github.com/OpenRefine/OpenRefine/wiki/Documentation-For-Developers)
-* [Contributing Guide](https://github.com/OpenRefine/OpenRefine/blob/master/CONTRIBUTING.md)
-* [Project Governance](https://github.com/OpenRefine/OpenRefine/blob/master/GOVERNANCE.md)
-
-## Contact us
-
-* [Community forum](https://forum.openrefine.org)
-* [Twitter](https://www.twitter.com/openrefine)
-* [Gitter](https://gitter.im/OpenRefine/OpenRefine)
-* [Matrix (bridged from Gitter)](https://matrix.to/#/#OpenRefine_OpenRefine:gitter.im)
-
-## Licensing and legal issues
-
-OpenRefine is open source software and is licensed under the BSD license located in the [LICENSE.txt](LICENSE.txt). See the folder `licenses` for information on open source libraries that OpenRefine depends on.
-
-## Credits
-
-This software was created by Metaweb Technologies, Inc. and originally written and conceived by [David Huynh](https://github.com/dfhuynh). Metaweb Technologies, Inc. was acquired by Google, Inc. in July 2010 and the product was renamed Google Refine. In October 2012, it was renamed OpenRefine as it transitioned to a community-driven project.
-
-Since 2020, OpenRefine is fiscally sponsored by [Code for Science and Society](https://www.codeforsociety.org/) (CS&S).
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for instructions on how to contribute yourself.
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-openrefine" class="anchor" aria-hidden="true" tabindex="-1" href="#openrefine"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开放精炼</font></font></h1>
+<p dir="auto"><a href="https://zenodo.org/badge/latestdoi/6220644" rel="nofollow"><img src="https://camo.githubusercontent.com/3de3b891e1dba76555701651c89d16ef5acec5e8936c857639673986aa0a2053/68747470733a2f2f7a656e6f646f2e6f72672f62616467652f363232303634342e737667" alt="DOI" data-canonical-src="https://zenodo.org/badge/6220644.svg" style="max-width: 100%;"></a>
+<a href="https://gitter.im/OpenRefine/OpenRefine" rel="nofollow"><img src="https://camo.githubusercontent.com/f2c3fdd28c7fa2117f23e2cc32ab025c0d8e92ebe9d273836f9d61f07aec9858/68747470733a2f2f6261646765732e6769747465722e696d2f4f70656e526566696e652f4f70656e526566696e652e737667" alt="加入聊天：https://gitter.im/OpenRefine/OpenRefine" data-canonical-src="https://badges.gitter.im/OpenRefine/OpenRefine.svg" style="max-width: 100%;"></a>
+<a href="https://github.com/OpenRefine/OpenRefine/actions/workflows/snapshot_release.yml"><img src="https://github.com/OpenRefine/OpenRefine/actions/workflows/snapshot_release.yml/badge.svg" alt="快照发布" style="max-width: 100%;"></a> <a href="https://coveralls.io/github/OpenRefine/OpenRefine?branch=master" rel="nofollow"><img src="https://camo.githubusercontent.com/1cad69bcad8f2710e655692df931a43dc6f8cff5e18d57606c463a7393fef130/68747470733a2f2f636f766572616c6c732e696f2f7265706f732f6769746875622f4f70656e526566696e652f4f70656e526566696e652f62616467652e7376673f6272616e63683d6d6173746572" alt="覆盖状态" data-canonical-src="https://coveralls.io/repos/github/OpenRefine/OpenRefine/badge.svg?branch=master" style="max-width: 100%;"></a> <a href="https://hosted.weblate.org/engage/openrefine/?utm_source=widget" rel="nofollow"><img src="https://camo.githubusercontent.com/096dcf7e6e6425c44cda856533e9259b70921541cc3f2dae4e044ebeb068f781/68747470733a2f2f686f737465642e7765626c6174652e6f72672f776964676574732f6f70656e726566696e652f2d2f7376672d62616467652e737667" alt="翻译进度" data-canonical-src="https://hosted.weblate.org/widgets/openrefine/-/svg-badge.svg" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenRefine 是一个基于 Java 的强大工具，可让您加载数据、理解数据、清理数据、协调数据，并使用来自 Web 的数据对其进行扩充。</font><font style="vertical-align: inherit;">一切都来自网络浏览器以及您自己计算机的舒适和隐私。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">官方网站： https: </font></font><strong><a href="https://openrefine.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">//openrefine.org</font></font></a></strong></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">社区论坛： https: </font></font><strong><a href="https://forum.openrefine.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">//forum.openrefine.org</font></font></a></strong></p>
+<p dir="auto"><a href="https://openrefine.org" rel="nofollow"><img src="https://github.com/OpenRefine/OpenRefine/raw/master/graphics/icon/open-refine-320px.png" align="right" style="max-width: 100%;"></a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-download" class="anchor" aria-hidden="true" tabindex="-1" href="#download"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载</font></font></h2>
+<ul dir="auto">
+<li><a href="https://github.com/OpenRefine/OpenRefine/releases"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenRefine 版本</font></font></a></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-snapshot-releases" class="anchor" aria-hidden="true" tabindex="-1" href="#snapshot-releases"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">快照发布</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以下载 OpenRefine 开发版本的快照。</font><font style="vertical-align: inherit;">为此，您需要登录 GitHub。</font></font><a href="https://github.com/OpenRefine/OpenRefine/actions/workflows/snapshot_release.yml"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">然后，单击此页面</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上第一个带有绿色勾号/复选标记的项目</font><font style="vertical-align: inherit;">，然后向下滚动到“工件”部分以查找与您的操作系统匹配的版本。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-run-from-source" class="anchor" aria-hidden="true" tabindex="-1" href="#run-from-source"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从源代码运行</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您已将此存储库克隆到您的计算机，则可以使用以下命令运行 OpenRefine：</font></font></p>
+<ul dir="auto">
+<li><code>./refine</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Mac 操作系统和 Linux 上</font></font></li>
+<li><code>refine.bat</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Windows 上</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这需要</font></font><a href="https://adoptium.net/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">JDK 11</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或更高版本、</font></font><a href="https://maven.apache.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache Maven</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://www.npmjs.com/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NPM</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 16 或更高版本。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-documentation" class="anchor" aria-hidden="true" tabindex="-1" href="#documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></h2>
+<ul dir="auto">
+<li><a href="https://openrefine.org/docs" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用户手册</font></font></a></li>
+<li><a href="https://github.com/OpenRefine/OpenRefine/wiki/FAQ"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">常问问题</font></font></a></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-contributing-to-the-project" class="anchor" aria-hidden="true" tabindex="-1" href="#contributing-to-the-project"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为项目做出贡献</font></font></h2>
+<ul dir="auto">
+<li><a href="https://github.com/OpenRefine/OpenRefine/wiki/Documentation-For-Developers"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发人员指南和架构</font></font></a></li>
+<li><a href="https://github.com/OpenRefine/OpenRefine/blob/master/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献指南</font></font></a></li>
+<li><a href="https://github.com/OpenRefine/OpenRefine/blob/master/GOVERNANCE.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">项目治理</font></font></a></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-contact-us" class="anchor" aria-hidden="true" tabindex="-1" href="#contact-us"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">联系我们</font></font></h2>
+<ul dir="auto">
+<li><a href="https://forum.openrefine.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">社区论坛</font></font></a></li>
+<li><a href="https://www.twitter.com/openrefine" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">推特</font></font></a></li>
+<li><a href="https://gitter.im/OpenRefine/OpenRefine" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">吉特</font></font></a></li>
+<li><a href="https://matrix.to/#/#OpenRefine_OpenRefine:gitter.im" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">矩阵（从 Gitter 桥接）</font></font></a></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-licensing-and-legal-issues" class="anchor" aria-hidden="true" tabindex="-1" href="#licensing-and-legal-issues"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可和法律问题</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenRefine 是开源软件，并根据位于</font></font><a href="/OpenRefine/OpenRefine/blob/master/LICENSE.txt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LICENSE.txt</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中的 BSD 许可证获得许可。</font></font><code>licenses</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关 OpenRefine 所依赖的开源库的信息，</font><font style="vertical-align: inherit;">请参阅该文件夹。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-credits" class="anchor" aria-hidden="true" tabindex="-1" href="#credits"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">制作人员</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该软件由 Metaweb Technologies, Inc. 创建，最初由</font></font><a href="https://github.com/dfhuynh"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">David Huynh</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编写和构思。</font><font style="vertical-align: inherit;">Metaweb Technologies, Inc. 于 2010 年 7 月被 Google, Inc. 收购，产品更名为 Google Refine。</font><font style="vertical-align: inherit;">2012 年 10 月，它更名为 OpenRefine，因为它转变为社区驱动的项目。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">自 2020 年起，OpenRefine 得到</font></font><a href="https://www.codeforsociety.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">科学与社会代码</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">(CS&amp;S) 的财政赞助。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关如何贡献自己的说明，</font><font style="vertical-align: inherit;">请参阅</font></font><a href="/OpenRefine/OpenRefine/blob/master/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CONTRIBUTING.md 。</font></font></a><font style="vertical-align: inherit;"></font></p>
+</article></div>
