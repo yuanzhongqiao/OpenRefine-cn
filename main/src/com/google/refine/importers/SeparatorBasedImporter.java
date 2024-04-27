@@ -51,12 +51,15 @@ import java.util.Map;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.common.base.CharMatcher;
+import com.univocity.parsers.common.AbstractParser;
 import com.univocity.parsers.common.TextParsingException;
 import com.univocity.parsers.common.record.Record;
 import com.univocity.parsers.csv.CsvFormat;
 import com.univocity.parsers.csv.CsvParser;
 import com.univocity.parsers.csv.CsvParserSettings;
 import com.univocity.parsers.csv.UnescapedQuoteHandling;
+import com.univocity.parsers.tsv.TsvParser;
+import com.univocity.parsers.tsv.TsvParserSettings;
 import org.apache.commons.text.StringEscapeUtils;
 
 import com.google.refine.ProjectMetadata;
@@ -67,6 +70,7 @@ import com.google.refine.util.JSONUtilities;
 
 public class SeparatorBasedImporter extends TabularImportingParserBase {
 
+    public static final int GUESSER_LINE_COUNT = 100;
     char DEFAULT_QUOTE_CHAR = new CsvParserSettings().getFormat().getQuote();
 
     public SeparatorBasedImporter() {
@@ -85,7 +89,7 @@ public class SeparatorBasedImporter extends TabularImportingParserBase {
         JSONUtilities.safePut(options, "guessCellValueTypes", false);
         JSONUtilities.safePut(options, "processQuotes", !nonNullSeparator.equals("\\t"));
         JSONUtilities.safePut(options, "quoteCharacter", String.valueOf(DEFAULT_QUOTE_CHAR));
-        JSONUtilities.safePut(options, "trimStrings", true);
+        JSONUtilities.safePut(options, "trimStrings", true); // FIXME: ignored?
 
         return options;
     }
@@ -107,6 +111,9 @@ public class SeparatorBasedImporter extends TabularImportingParserBase {
         sep = StringEscapeUtils.unescapeJava(sep);
         boolean processQuotes = JSONUtilities.getBoolean(options, "processQuotes", true);
         boolean strictQuotes = JSONUtilities.getBoolean(options, "strictQuotes", false);
+
+        // TODO: Perhaps ask user to declare explicitly if they want TSV or weird CSV with \t separator hybrid?
+        boolean tsv = "\t".equals(sep) && !processQuotes && !strictQuotes;
 
         List<Object> retrievedColumnNames = null;
         if (options.has("columnNames")) {
@@ -136,21 +143,28 @@ public class SeparatorBasedImporter extends TabularImportingParserBase {
             quote = CharMatcher.whitespace().trimFrom(quoteCharacter).charAt(0);
         }
 
-        CsvParserSettings settings = new CsvParserSettings();
-        CsvFormat format = settings.getFormat();
-        format.setDelimiter(sep);
-        format.setQuote(quote);
-        format.setLineSeparator("\n");
-        settings.setIgnoreLeadingWhitespaces(false);
-        settings.setIgnoreTrailingWhitespaces(false);
-        if (strictQuotes) {
-            settings.setUnescapedQuoteHandling(UnescapedQuoteHandling.RAISE_ERROR);
+        AbstractParser parser;
+        if (tsv) {
+            TsvParserSettings settings = new TsvParserSettings();
+            settings.setMaxCharsPerColumn(256 * 1024); // TODO: Perhaps use a lower default and make user configurable?
+            parser = new TsvParser(settings);
+        } else {
+            CsvParserSettings settings = new CsvParserSettings();
+            CsvFormat format = settings.getFormat();
+            format.setDelimiter(sep);
+            format.setQuote(quote);
+            format.setLineSeparator("\n");
+            settings.setIgnoreLeadingWhitespaces(false);
+            settings.setIgnoreTrailingWhitespaces(false);
+            if (strictQuotes) {
+                settings.setUnescapedQuoteHandling(UnescapedQuoteHandling.RAISE_ERROR);
+            }
+            settings.setKeepQuotes(!processQuotes);
+            settings.setMaxCharsPerColumn(256 * 1024); // TODO: Perhaps use a lower default and make user configurable?
+            parser = new CsvParser(settings);
         }
-        settings.setKeepQuotes(!processQuotes);
-        settings.setMaxCharsPerColumn(256 * 1024); // TODO: Perhaps use a lower default and make user configurable?
-
         try (final LineNumberReader lnReader = new LineNumberReader(reader);) {
-            CsvParser parser = new CsvParser(settings);
+
             parser.beginParsing(lnReader);
 
             TableDataReader dataReader = new TableDataReader() {
@@ -194,13 +208,12 @@ public class SeparatorBasedImporter extends TabularImportingParserBase {
                 CsvFormat format = guessFormat(file, encoding);
                 if (format != null) {
                     if (separator != null) {
-                        if (format.getDelimiter() == separator.separator) {
-                            // They both agree - yay!
-                            return StringEscapeUtils.escapeJava(Character.toString(separator.separator));
-                        } else {
-                            logger.warn("Delimiter guesses disagree - uniVocity: {} - internal: {}", format.getDelimiter(),
+                        if (format.getDelimiter() != separator.separator) {
+                            logger.warn("Delimiter guesses disagree - uniVocity: '{}' - internal: '{}'", format.getDelimiter(),
                                     separator.separator);
                         }
+                        // Even if they disagree, use our guess for backward compatibility
+                        return StringEscapeUtils.escapeJava(Character.toString(separator.separator));
                     } else {
                         // We got a guess from CsvParser, but not ours, so let's use that
                         return StringEscapeUtils.escapeJava(format.getDelimiterString());
@@ -211,7 +224,6 @@ public class SeparatorBasedImporter extends TabularImportingParserBase {
                         return StringEscapeUtils.escapeJava(Character.toString(separator.separator));
                     }
                 }
-
             }
         }
         return null;
@@ -233,15 +245,12 @@ public class SeparatorBasedImporter extends TabularImportingParserBase {
                 Reader reader = encoding != null ? new InputStreamReader(is, encoding) : new InputStreamReader(is);
                 LineNumberReader lineNumberReader = new LineNumberReader(reader)) {
             CsvParserSettings settings = new CsvParserSettings();
+            // We could provide a set of delimiters to consider below if we wanted to restrict this
             settings.detectFormatAutomatically();
-            settings.setFormatDetectorRowSampleCount(100);
+            settings.setFormatDetectorRowSampleCount(GUESSER_LINE_COUNT); // default is 20, but let's match our guesser
             CsvParser parser = new CsvParser(settings);
             parser.beginParsing(lineNumberReader);
-            for (int i = 0; i < 20; i++) {
-                if (parser.parseNext() == null) {
-                    break;
-                }
-            }
+            // Format guesser result is available as soon as beginParsing() completes
             return parser.getDetectedFormat();
         } catch (IOException e) {
             e.printStackTrace();
@@ -267,7 +276,7 @@ public class SeparatorBasedImporter extends TabularImportingParserBase {
                 boolean inQuote = false;
                 String s;
                 while (totalChars < 64 * 1024 &&
-                        lineCount < 100 &&
+                        lineCount < GUESSER_LINE_COUNT &&
                         (s = lineNumberReader.readLine()) != null) {
 
                     totalChars += s.length() + 1; // count the new line character

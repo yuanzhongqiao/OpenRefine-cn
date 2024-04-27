@@ -11,7 +11,7 @@
   <parent>
     <groupId>org.openrefine</groupId>
     <artifactId>openrefine</artifactId>
-    <version>3.8-SNAPSHOT</version>
+    <version>3.9-SNAPSHOT</version>
   </parent>
 
   <properties>
@@ -42,7 +42,6 @@
         <directory>tests/data</directory>
       </testResource>
     </testResources>
-    <outputDirectory>webapp/WEB-INF/classes</outputDirectory>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -96,6 +95,17 @@
 	<version>${maven-jar-plugin.version}</version>
         <executions>
           <execution>
+            <id>default-jar</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>webapp/WEB-INF/lib</outputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>test-jar</id>
             <goals>
               <goal>test-jar</goal>
             </goals>
@@ -153,6 +163,8 @@
         <configuration>
           <excludes>
             <exclude>org/marc4j/converter/impl/*CodeTableGenerated*</exclude>
+            <!-- Metaphone3 should be an external library and has many instructions, dominating our actual code in coverage reports -->
+            <exclude>com/google/refine/clustering/binning/Metaphone3.class</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -211,11 +223,6 @@
       <groupId>commons-fileupload</groupId>
       <artifactId>commons-fileupload</artifactId>
       <version>${commons-fileupload.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-collections</groupId>
-      <artifactId>commons-collections</artifactId>
-      <version>${commons-collections.version}</version>
     </dependency>
     <dependency>
         <groupId>org.apache.commons</groupId>
@@ -353,7 +360,7 @@
       <artifactId>jaxb-api</artifactId>
       <version>${jaxb-api.version}</version>
     </dependency>
-    <dependency>
+    <dependency> <!-- Mozilla Public License Version 1.1 - for details see /OpenRefine/packaging/manual_licenses.xml -->
       <groupId>com.github.albfernandez</groupId>
       <artifactId>juniversalchardet</artifactId>
       <version>${juniversalchardet.version}</version>

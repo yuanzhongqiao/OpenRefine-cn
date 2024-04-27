@@ -171,7 +171,6 @@ set REFINE_LIB_DIR=server\target\lib
 :gotLibDir
 
 if not "%REFINE_VERBOSITY%" == "" goto gotVerbosity
-set REFINE_VERBOSITY=info
 :gotVerbosity
 set OPTS=%OPTS% -Drefine.verbosity=%REFINE_VERBOSITY%
 
@@ -238,8 +237,8 @@ if %JAVA_RELEASE% LSS 11 (
     echo OpenRefine requires Java version 11 or later. If you have multiple versions of Java installed, please set the environment variable JAVA_HOME to the correct version.
     exit /B 1
 )
-if %JAVA_RELEASE% GTR 17 (
-    echo WARNING: OpenRefine is not tested and not recommended for use with Java versions greater than 17.
+if %JAVA_RELEASE% GTR 21 (
+    echo WARNING: OpenRefine is not tested and not recommended for use with Java versions greater than 21.
 )
 
 set CLASSPATH="%REFINE_CLASSES_DIR%;%REFINE_LIB_DIR%\*"
